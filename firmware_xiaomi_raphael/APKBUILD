@@ -1,0 +1,31 @@
+pkgname=firmware-xiaomi-rapharl
+pkgver=20220422
+pkgrel=0
+pkgdesc="Firmware for Xiaomi Redmi K20 Pro"
+depends="
+	linux-xiaomi-rapharl
+	device-xiaomi-raphael
+	postmarketos-base
+"
+subpackages="
+	$pkgname-adreno
+url="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael"
+arch="aarch64"
+license="proprietary"
+options="!check !strip !archcheck !tracedeps pmb:cross-native"
+_commit="2d44a117891d7c97452e397e4ca5c058bd61b5a4"
+source="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael/archive/$_commit.tar.gz"
+builddir="$srcdir/$pkgname_src"
+package() {
+	# parent package is empty
+	mkdir -p "$pkgdir"
+}
+
+adreno() {
+	pkgdesc="Xiaomi Redmi K20 Pro adreno firmware"
+
+	install -Dm644 "$builddir"/a6* -t \
+		"$subpkgdir/lib/firmware/qcom/"
+}
+
+sha512sums=""
