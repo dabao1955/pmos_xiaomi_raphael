@@ -24,7 +24,7 @@ makedepends="
 
 # Source
 _repository="linux"
-_commit="6a399174f853a75395218f7264aeb7a92c3f718b"
+_commit="35e5c5db1ba4a5cab994638817481220f88b8275"
 _config="config-$_flavor.$arch"
 source="
 	$pkgname-$_commit.tar.gz::https://github.com/degdag-mohamed/$_repository/archive/$_commit.tar.gz
