@@ -1,5 +1,6 @@
 pkgname=firmware-xiaomi-raphael
 pkgver=20220422
+arch="aarch64"
 pkgrel=0
 pkgdesc="Firmware for Xiaomi Redmi K20 Pro"
 depends="
@@ -9,6 +10,7 @@ depends="
 "
 subpackages="
 	$pkgname-adreno
+"
 url="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael"
 arch="aarch64"
 license="proprietary"
