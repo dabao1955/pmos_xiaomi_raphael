@@ -48,7 +48,7 @@ build() {
 package() {
 	mkdir -p "$pkgdir"/boot
 
-	install -Dm644 "$builddir/arch/$_carch/boot/Image.gz" \
+	install -Dm644 "$builddir/out/arch/$_carch/boot/Image.gz" \
 		"$pkgdir/boot/vmlinuz"
 
 	make -j2 O="$_outdir" modules_install dtbs_install \
@@ -59,7 +59,7 @@ package() {
 		INSTALL_DTBS_PATH="$pkgdir"/boot/dtbs
 	rm -f "$pkgdir"/lib/modules/*/build "$pkgdir"/lib/modules/*/source
 
-	install -D "$builddir"/include/config/kernel.release \
+	install -D "$builddir"/out/include/config/kernel.release \
 		"$pkgdir"/usr/share/kernel/$_flavor/kernel.release
 }
 
