@@ -6,6 +6,7 @@ pkgrel=0
 url="https://postmarketos.org"
 license="MIT"
 arch="aarch64"
+_carch="arm64"
 options="!check !archcheck"
 depends="
 	linux-xiaomi-raphael
