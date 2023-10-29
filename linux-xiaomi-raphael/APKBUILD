@@ -41,7 +41,7 @@ prepare() {
 
 build() {
 	unset LDFLAGS
-	make O="$_outdir" ARCH="$_carch" CC="${CC:-gcc}" \
+	make -j2 O="$_outdir" ARCH="$_carch" CC="${CC:-gcc}" \
 		KBUILD_BUILD_VERSION="$((pkgrel + 1 ))-postmarketOS"
 }
 
@@ -51,7 +51,7 @@ package() {
 	install -Dm644 "$builddir/arch/$_carch/boot/Image.gz" \
 		"$pkgdir/boot/vmlinuz"
 
-	make modules_install dtbs_install \
+	make -j2 O="$_outdir" modules_install dtbs_install \
 		ARCH="$_carch" \
 		INSTALL_PATH="$pkgdir"/boot/ \
 		INSTALL_MOD_PATH="$pkgdir" \
