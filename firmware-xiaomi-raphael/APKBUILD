@@ -1,8 +1,9 @@
 pkgname=firmware-xiaomi-raphael
 pkgver=20220422
-arch="aarch64"
 pkgrel=0
 pkgdesc="Firmware for Xiaomi Redmi K20 Pro"
+arch="aarch64"
+_carch="arm64"
 depends="
 	linux-xiaomi-rapharl
 	device-xiaomi-raphael
