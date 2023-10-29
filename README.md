@@ -24,19 +24,3 @@ Basic   | Spec Sheet
 ## Device picture
 
 ![Redmi K20 Pro / Mi 9T Pro](https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/beee478168e5c4fd0d66369386fddbbe.jpg)
-
-# Note: This tree is currently in an unfinished state.
-
-The build error mainly occurs when building the APKBUILD file of linux-xiaomi-raphael.
-
-When building dtb and modules, the following errors may occur:
-
-```
-include/config/auto.conf: No such file or directory
-```
-
-and
-
-```
-sed: modules.order: No such file or directory
-```
