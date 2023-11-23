@@ -5,7 +5,7 @@ pkgdesc="Firmware for Xiaomi Redmi K20 Pro"
 arch="aarch64"
 _carch="arm64"
 depends="
-	linux-xiaomi-rapharl
+	linux-xiaomi-raphael
 	device-xiaomi-raphael
 	postmarketos-base
 "
