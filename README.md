@@ -19,7 +19,7 @@ Basic   | Spec Sheet
 | Rear camera 2           | 8 MP                                                            |
 | Rear camera 3           | 13 MP                                                           |
 | Front camera            | Motorized pop-up 20 MP, HDR                                     |
-| Target PostmarketOS Version | 22.06
+| Target PostmarketOS Version | 23.06
 
 ## Device picture
 
