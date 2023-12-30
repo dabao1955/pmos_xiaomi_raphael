@@ -12,6 +12,7 @@ license="GPL-2.0-only"
 options="!strip !check !tracedeps pmb:cross-native"
 makedepends="
 	bash
+	build-base
 	bc
 	bison
 	devicepkg-dev
