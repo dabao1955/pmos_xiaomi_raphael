@@ -7,8 +7,9 @@ deviceinfo_name="Xiaomi Redmi K20 Pro"
 deviceinfo_manufacturer="Xiaomi"
 deviceinfo_codename="xiaomi-raphael"
 deviceinfo_year="2019"
-deviceinfo_dtb=""
-deviceinfo_modules_initfs=""
+deviceinfo_append_dtb="true"
+deviceinfo_dtb="qcom/sm8150-xiaomi-raphael"
+deviceinfo_modules_initfs="msm"
 deviceinfo_arch="aarch64"
 
 # Device related
@@ -20,7 +21,7 @@ deviceinfo_screen_height="2340"
 
 # Bootloader related
 deviceinfo_flash_method="fastboot"
-deviceinfo_kernel_cmdline="console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xa90000 androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.usbcontroller=a600000.dwc3 service_locator.enable=1 loop.max_part=7 androidboot.init_fatal_reboot_target=recovery kpti=off buildvariant=userdebug"
+deviceinfo_kernel_cmdline="PMOS_NO_OUTPUT_REDIRECT clk_ignore_unused"
 deviceinfo_generate_bootimg="true"
 deviceinfo_bootimg_qcdt="false"
 deviceinfo_bootimg_mtk_mkimage="false"
@@ -32,3 +33,9 @@ deviceinfo_flash_offset_kernel="0x00008000"
 deviceinfo_flash_offset_ramdisk="0x00000000"
 deviceinfo_flash_offset_second="0x00000000"
 deviceinfo_flash_offset_tags="0x00000100"
+
+deviceinfo_flash_pagesize="4096"
+deviceinfo_flash_sparse="true
+
+# Required for devices using UFS as storage (instead of e.g. eMMC)
+deviceinfo_rootfs_image_sector_size="4096"
