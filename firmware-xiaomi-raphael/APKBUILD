@@ -23,6 +23,9 @@ package() {
 	mkdir -p "$pkgdir"
 	install -Dm644 "$builddir"/a6* -t \
 		"$pkgdir/lib/firmware/qcom/"
+	install -Dm644 "$builddir"/30-gpu-firmware.files -t \
+		"$pkgdir/usr/share/mkinitfs/files/30-gpu-firmware.files"
+
 }
 
 sha512sums=""
