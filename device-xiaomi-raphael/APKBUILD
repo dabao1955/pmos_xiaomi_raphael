@@ -11,6 +11,7 @@ options="!check !archcheck"
 depends="
 	linux-xiaomi-raphael
 	mkbootimg
+	linux-firmware-qcom
 	mesa-dri-gallium
 	postmarketos-base
 "
