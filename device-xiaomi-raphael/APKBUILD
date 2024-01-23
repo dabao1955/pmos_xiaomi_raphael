@@ -20,6 +20,8 @@ source="
 	deviceinfo
 	30-gpu-firmware.files
 "
+subpackages="
+        $pkgname-mainline-firmware:mainline_firmware
 
 build() {
 	devicepkg_build $startdir $pkgname
