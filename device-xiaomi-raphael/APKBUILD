@@ -20,8 +20,6 @@ source="
 	deviceinfo
 	30-gpu-firmware.files
 "
-subpackages="
-        $pkgname-mainline-firmware:mainline_firmware
 
 build() {
 	devicepkg_build $startdir $pkgname
@@ -29,16 +27,6 @@ build() {
 
 package() {
 	devicepkg_package $startdir $pkgname
-}
-
-mainline_firmware() {
-	pkgdesc="Firmware support packages for mainline kernel"
-	depends="firmware-xiaomi-raphael-adreno"
-	install_if="linux-xiaomi-raphael"
-	mkdir "$subpkgdir"
-
-	install -Dm644 "$srcdir/30-gpu-firmware.files" \
-		"$subpkgdir/etc/postmarketos-mkinitfs/files/30-gpu-firmware.files"
 }
 
 sha512sums="(run 'pmbootstrap checksum device-xiaomi-raphael' to fill)"

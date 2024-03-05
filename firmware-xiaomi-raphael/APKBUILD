@@ -15,14 +15,14 @@ url="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael"
 arch="aarch64"
 license="proprietary"
 options="!check !strip !archcheck !tracedeps pmb:cross-native"
-_commit="2d44a117891d7c97452e397e4ca5c058bd61b5a4"
+_commit="701ef1c441a0d4aae4b80a476b286eadbb80aeed"
 source="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael/archive/$_commit.tar.gz"
 builddir="$srcdir/$pkgname_src"
 package() {
 	# parent package is empty
 	mkdir -p "$pkgdir"
-	install -Dm644 "$builddir"/a6* -t \
-		"$pkgdir/lib/firmware/qcom/"
+	install -Dm644 "$builddir"/*.mbn -t \
+		"$pkgdir/lib/firmware/qcom/sm8150/Xiaomi/raphael"
 	install -Dm644 "$builddir"/30-gpu-firmware.files -t \
 		"$pkgdir/usr/share/mkinitfs/files/30-gpu-firmware.files"
 
