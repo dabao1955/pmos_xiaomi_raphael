@@ -1,4 +1,13 @@
-./lib/firmware/qcom/sm8150/Xiaomi/raphael/adsp.mbn
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/a640_zap.mbn
+./lib/firmware/qcom/sm8150/Xiaomi/raphael/adsp.mbn
+./lib/firmware/qcom/sm8150/Xiaomi/raphael/adspr.jsn
+./lib/firmware/qcom/sm8150/Xiaomi/raphael/adspua.jsn
+./lib/firmware/qcom/sm8150/Xiaomi/raphael/cdsp.mbn
+./lib/firmware/qcom/sm8150/Xiaomi/raphael/cdspr.jsn
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/ipa_fws.mbn
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/modem.mbn
+./lib/firmware/qcom/sm8150/Xiaomi/raphael/modemr.jsn
+./lib/firmware/qcom/sm8150/Xiaomi/raphael/slpir.jsn
+./lib/firmware/qcom/sm8150/Xiaomi/raphael/slpius.jsn
+./lib/firmware/qcom/sm8150/Xiaomi/raphael/venus.mbn
+./lib/firmware/qcom/sm8150/Xiaomi/raphael/wlanmdsp.mbn
