@@ -42,7 +42,7 @@ prepare() {
 
 build() {
 	unset LDFLAGS
-	make -j2 O="$_outdir" ARCH="$_carch" CC="${CC:-gcc}" \
+	make -j$(nproc) O="$_outdir" ARCH="$_carch" CC="${CC:-gcc}" \
 		KBUILD_BUILD_VERSION="$((pkgrel + 1 ))-postmarketOS"
 }
 
@@ -65,4 +65,7 @@ package() {
 }
 
 
-sha512sums=""
+sha512sums="
+4a395c62cce09e9ad5d96315029e6f834e43c82d4211abdf48cbc20e603928511b8a8563c8e8b6fc08b24e28e00a098c2bbab19947b20805610cc5a26f16b3d9  linux-xiaomi-raphael-35e5c5db1ba4a5cab994638817481220f88b8275.tar.gz
+54b76d86c344eb67dca53d5940c7b9a550a0493d10925a4b1b9d338bddd41168079cf5dcf11b0f854c0e84d21b8422f2730c912f0103a4d273a829fe4fc5caa3  config-xiaomi-raphael.aarch64
+"

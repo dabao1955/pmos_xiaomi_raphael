@@ -4,15 +4,14 @@ pkgrel=0
 pkgdesc="Firmware for Xiaomi Redmi K20 Pro"
 arch="aarch64"
 _carch="arm64"
+makedepends="
+	wget
+"
 depends="
-	linux-xiaomi-raphael
-	device-xiaomi-raphael
-	postmarketos-base
-	linux-firmware-qcom
+	wget
 "
 
 url="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael"
-arch="aarch64"
 license="proprietary"
 options="!check !strip !archcheck !tracedeps pmb:cross-native"
 _commit="6311492cd199ff1ed869d4511801bdebb5373d57"
@@ -20,13 +19,12 @@ source="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael/archive/$_comm
 builddir="$srcdir/$pkgname_src"
 package() {
 	# parent package is empty
-	mkdir -p "$pkgdir"
-	install -Dm644 "$builddir"/* -t \
-		"$pkgdir/lib/firmware/qcom/sm8150/Xiaomi/raphael"
-	install -Dm644 "$builddir"/30-gpu-firmware.files -t \
-		"$pkgdir/usr/share/mkinitfs/files/30-gpu-firmware.files"
-	rm -rf "$pkgdir/lib/firmware/qcom/sm8150/Xiaomi/raphael/LICENSE"
-
+	mkdir -p "$pkgdir" $pkgdir/lib/ $pkgdir/lib/firmware/ $pkgdir/lib/firmware/qcom/ $pkgdir/lib/firmware/qcom/sm8150/ $pkgdir/lib/firmware/qcom/sm8150/Xiaomi/ $pkgdir/lib/firmware/qcom/sm8150/Xiaomi/raphael/
+	cp -rv $srcdir/$pkgname_src/* $pkgdir/lib/firmware/qcom/sm8150/Xiaomi/raphael/
+	cp -rv $srcdir/$pkgname_src/* $pkgdir/lib/firmware/qcom/sm8150/
+	chmod 644 -Rv $pkgdir/lib/firmware/qcom/sm8150/Xiaomi/raphael/*
 }
 
-sha512sums=""
+sha512sums="
+90b4ea9e4fe020264459fc7c218e6a60b32be5384714b4bacafb92887e027ed15b4270835423af4af1ca95cd32c277fcaff12d9b6cb2a33348a360effdf8f8f3  6311492cd199ff1ed869d4511801bdebb5373d57.tar.gz
+"
