@@ -15,6 +15,7 @@ depends="
 	linux-firmware-qcom
 	mesa-dri-gallium
 	postmarketos-base
+	mesa-vulkan-freedreno
 "
 makedepends="devicepkg-dev"
 source="

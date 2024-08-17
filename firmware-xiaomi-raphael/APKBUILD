@@ -4,27 +4,101 @@ pkgrel=0
 pkgdesc="Firmware for Xiaomi Redmi K20 Pro"
 arch="aarch64"
 _carch="arm64"
-makedepends="
-	wget
-"
-depends="
-	wget
-"
+subpackages="
+	$pkgname-adreno
+	$pkgname-adsp
+	$pkgname-camera
+	$pkgname-cdsp
+	$pkgname-ipa
+	$pkgname-slpi
+	$pkgname-venus
+	$pkgname-wlan
+	"
 
 url="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael"
 license="proprietary"
 options="!check !strip !archcheck !tracedeps pmb:cross-native"
-_commit="6311492cd199ff1ed869d4511801bdebb5373d57"
+_commit="45b6e993cf5d6fec447d924cf773783a8dbfb596"
 source="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael/archive/$_commit.tar.gz"
 builddir="$srcdir/$pkgname_src"
+
 package() {
 	# parent package is empty
-	mkdir -p "$pkgdir" $pkgdir/lib/ $pkgdir/lib/firmware/ $pkgdir/lib/firmware/qcom/ $pkgdir/lib/firmware/qcom/sm8150/ $pkgdir/lib/firmware/qcom/sm8150/Xiaomi/ $pkgdir/lib/firmware/qcom/sm8150/Xiaomi/raphael/
-	cp -rv $srcdir/$pkgname_src/* $pkgdir/lib/firmware/qcom/sm8150/Xiaomi/raphael/
-	cp -rv $srcdir/$pkgname_src/* $pkgdir/lib/firmware/qcom/sm8150/
-	chmod 644 -Rv $pkgdir/lib/firmware/qcom/sm8150/Xiaomi/raphael/*
+	mkdir -p "$pkgdir"
+}
+
+# Xiaomi raphael boots with secure boot, it can only load signed firmwares.
+adreno() {
+	pkgdesc="Xiaomi raphael adreno firmware"
+	depends="firmware-qcom-adreno-a650"
+	ls "$builddir"
+	install -Dm644 "$builddir"/sm8150/raphael/a6* -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
+}
+
+adsp() {
+	pkgdesc="Xiaomi raphael adsp firmware"
+
+	install -Dm644 "$builddir"/sm8150/raphael/adsp* -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
+}
+
+cdsp() {
+	pkgdesc="Xiaomi raphael cdsp firmware"
+
+	install -Dm644 "$builddir"/sm8150/raphael/cdsp* -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
+}
+
+cdsp() {
+	pkgdesc="Xiaomi raphael camera firmware"
+
+	install -Dm644 "$builddir"/sm8150/raphael/CAMERA_ICP.elf -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
+}
+
+ipa() {
+	pkgdesc="Xiaomi raphael ipa firmware"
+
+	install -Dm644 "$builddir"/sm8150/raphael/ipa* -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
+}
+
+modem() {
+	pkgdesc="Xiaomi raphael modem firmware"
+
+	install -Dm644 "$builddir"/sm8150/raphael/modem* -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
+}
+
+
+slpi() {
+	pkgdesc="Xiaomi raphael slpi firmware"
+
+	install -Dm644 "$builddir"/sm8150/raphael/slpi* -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
+}
+
+touch() {
+	pkgdesc="Xiaomi raphael venus firmware"
+
+	install -Dm644 "$builddir"/sm8150/raphael/good* -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
+}
+
+venus() {
+	pkgdesc="Xiaomi raphael venus firmware"
+
+	install -Dm644 "$builddir"/sm8150/raphael/venus.mbn -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
+}
+
+wlan() {
+	pkgdesc="Xiaomi raphael wlan firmware"
+
+	install -Dm644 "$builddir"/sm8150/raphael/w* -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
 }
 
 sha512sums="
-90b4ea9e4fe020264459fc7c218e6a60b32be5384714b4bacafb92887e027ed15b4270835423af4af1ca95cd32c277fcaff12d9b6cb2a33348a360effdf8f8f3  6311492cd199ff1ed869d4511801bdebb5373d57.tar.gz
-"
+6e1b7d49846fa9834ccd8ee3bb64751c844bdfff52a4501a048f9055e59afb1f31b69bd5b2cd8296d86b89064c86cabb9c7e9dc9db9cd9fb43db9e4b4b478a39 45b6e993cf5d6fec447d924cf773783a8dbfb596.tar.gz"

@@ -1,4 +1,3 @@
 #!/bin/sh
-set -eu
 rc-update add tqftpserv boot
 rc-update add pd-mapper boot

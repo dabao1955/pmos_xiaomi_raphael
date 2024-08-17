@@ -8,7 +8,6 @@ deviceinfo_manufacturer="Xiaomi"
 deviceinfo_codename="xiaomi-raphael"
 deviceinfo_year="2019"
 deviceinfo_dtb="qcom/sm8150-xiaomi-raphael"
-deviceinfo_modules_initfs="gpi i2c_qcom_geni goodix_i2c qcom_pmi8998_charger qcom_fg"
 deviceinfo_arch="aarch64"
 
 # Device related
