@@ -43,20 +43,19 @@ adsp() {
 		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
 }
 
-cdsp() {
-	pkgdesc="Xiaomi raphael cdsp firmware"
-
-	install -Dm644 "$builddir"/sm8150/raphael/cdsp* -t \
-		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
-}
-
-cdsp() {
+camera() {
 	pkgdesc="Xiaomi raphael camera firmware"
 
 	install -Dm644 "$builddir"/sm8150/raphael/CAMERA_ICP.elf -t \
 		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
 }
 
+cdsp() {
+	pkgdesc="Xiaomi raphael cdsp firmware"
+
+	install -Dm644 "$builddir"/sm8150/raphael/cdsp* -t \
+		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
+}
 ipa() {
 	pkgdesc="Xiaomi raphael ipa firmware"
 
