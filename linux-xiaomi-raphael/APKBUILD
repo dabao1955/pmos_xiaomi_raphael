@@ -9,7 +9,7 @@ _carch="arm64"
 _flavor="xiaomi-raphael"
 url="https://kernel.org"
 license="GPL-2.0-only"
-options="!strip !check !tracedeps pmb:cross-native"
+options="!strip !check !tracedeps pmb:cross-native ！pmb：kconfigcheck"
 makedepends="
 	bash
 	build-base
