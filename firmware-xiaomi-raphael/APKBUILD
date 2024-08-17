@@ -19,7 +19,11 @@ url="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael"
 license="proprietary"
 options="!check !strip !archcheck !tracedeps pmb:cross-native"
 _commit="45b6e993cf5d6fec447d924cf773783a8dbfb596"
-source="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael/archive/$_commit.tar.gz"
+source="
+	https://github.com/dabao1955/pmos_firmware_xiaomi_raphael/archive/$_commit.tar.gz
+	30-gpu-firmware.files
+	firmware-xiaomi-raphael.post-install
+	"
 builddir="$srcdir/$pkgname_src"
 
 package() {
@@ -100,4 +104,7 @@ wlan() {
 }
 
 sha512sums="
-6e1b7d49846fa9834ccd8ee3bb64751c844bdfff52a4501a048f9055e59afb1f31b69bd5b2cd8296d86b89064c86cabb9c7e9dc9db9cd9fb43db9e4b4b478a39 45b6e993cf5d6fec447d924cf773783a8dbfb596.tar.gz"
+6e1b7d49846fa9834ccd8ee3bb64751c844bdfff52a4501a048f9055e59afb1f31b69bd5b2cd8296d86b89064c86cabb9c7e9dc9db9cd9fb43db9e4b4b478a39 45b6e993cf5d6fec447d924cf773783a8dbfb596.tar.gz
+e49d2c87794ed3c27654ad764319b22d4d15394c60a31cedd058fbfa0d55f9a5f9871f061fc954717f2448adb0e04ef42eb580ef363641d7397e25f98ea3b133  30-gpu-firmware.files
+5abdf51e4c7ce188f0bd7ccd9741dbd472ec1469e2f7b5074dde97a8f4171c3bb117cf838615c0f1870f5d89708aa6541fde097e47020c8bbacde5e00f1cca97  firmware-xiaomi-raphael.post-install
+"

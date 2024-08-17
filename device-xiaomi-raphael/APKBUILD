@@ -13,13 +13,14 @@ depends="
 	firmware-xiaomi-raphael
 	mkbootimg
 	linux-firmware-qcom
-	mesa-dri-gallium
 	postmarketos-base
 	mesa-vulkan-freedreno
 "
 makedepends="devicepkg-dev"
 source="
 	deviceinfo
+	modules-initfs
+	device-xiaomi-raphael.post-install
 "
 
 build() {
@@ -32,4 +33,6 @@ package() {
 
 sha512sums="
 6048f6863e1daa8e961755ca18a2692db0c66e1ac388f500251a997f7ebb591ba602f373b554582bd15b645c54527aa958e66a3fbf61e0d9e40b6f91ec59f4d5  deviceinfo
+d81350bb2c594d1c922b4eaa5f7ddd94ff5c52d915b6b34e01be2fddc5d624dea77343fab9b168acf889b55daa80a5deace6b81366d579816d5cc73b543a6826  modules-initfs
+7194e5fbae27108f68c9ebccad3081eab66921df28bc98d370e0463d2865a175e47119a3ed4b9fcef461e302cb5ff668f145fdf2fd251c845ae3182d2108cdeb  device-xiaomi-raphael.post-install
 "
