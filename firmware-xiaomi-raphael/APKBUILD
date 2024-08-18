@@ -1,7 +1,7 @@
 pkgname=firmware-xiaomi-raphael
 pkgver=20240117
 pkgrel=0
-pkgdesc="Firmware for Xiaomi Redmi K20 Pro"
+pkgdesc="Firmware for Xiaomi Mi 9T Pro / Redmi K20 Pro"
 arch="aarch64"
 _carch="arm64"
 subpackages="
@@ -11,8 +11,8 @@ subpackages="
 	$pkgname-cdsp
 	$pkgname-ipa
 	$pkgname-slpi
+	$pkgname-touchscreen
 	$pkgname-venus
-	$pkgname-wlan
 	"
 
 url="https://github.com/dabao1955/pmos_firmware_xiaomi_raphael"
@@ -24,7 +24,7 @@ source="
 	30-gpu-firmware.files
 	firmware-xiaomi-raphael.post-install
 	"
-builddir="$srcdir/$pkgname_src"
+builddir="$srcdir/pmos_firmware_xiaomi_raphael-$_commit"
 
 package() {
 	# parent package is empty
@@ -81,9 +81,8 @@ slpi() {
 	install -Dm644 "$builddir"/sm8150/raphael/slpi* -t \
 		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
 }
-
-touch() {
-	pkgdesc="Xiaomi raphael venus firmware"
+touchscreen() {
+	pkgdesc="Xiaomi raphael touchscreen firmware"
 
 	install -Dm644 "$builddir"/sm8150/raphael/good* -t \
 		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
@@ -96,15 +95,8 @@ venus() {
 		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
 }
 
-wlan() {
-	pkgdesc="Xiaomi raphael wlan firmware"
-
-	install -Dm644 "$builddir"/sm8150/raphael/w* -t \
-		"$subpkgdir/lib/firmware/qcom/sm8150/raphael/"
-}
-
 sha512sums="
 6e1b7d49846fa9834ccd8ee3bb64751c844bdfff52a4501a048f9055e59afb1f31b69bd5b2cd8296d86b89064c86cabb9c7e9dc9db9cd9fb43db9e4b4b478a39 45b6e993cf5d6fec447d924cf773783a8dbfb596.tar.gz
-e49d2c87794ed3c27654ad764319b22d4d15394c60a31cedd058fbfa0d55f9a5f9871f061fc954717f2448adb0e04ef42eb580ef363641d7397e25f98ea3b133  30-gpu-firmware.files
+c4e4a36dc0fd52569dec9f18c09849862d864fbbe56b044f22ce0d5c1ceb4380d08645c894a86f0668250fe48e5eef6a5f1f5147200efd918e4a340547ca084e  30-gpu-firmware.files
 5abdf51e4c7ce188f0bd7ccd9741dbd472ec1469e2f7b5074dde97a8f4171c3bb117cf838615c0f1870f5d89708aa6541fde097e47020c8bbacde5e00f1cca97  firmware-xiaomi-raphael.post-install
 "

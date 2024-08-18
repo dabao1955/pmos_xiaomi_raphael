@@ -1,7 +1,7 @@
 # Reference: <https://postmarketos.org/devicepkg>
 pkgname=device-xiaomi-raphael
-pkgdesc="Xiaomi Redmi K20 Pro"
-pkgver=0.1
+pkgdesc="Xiaomi Mi 9T Pro / Redmi K20 Pro"
+pkgver=1
 pkgrel=0
 url="https://postmarketos.org"
 license="MIT"
@@ -32,7 +32,6 @@ package() {
 }
 
 sha512sums="
-6048f6863e1daa8e961755ca18a2692db0c66e1ac388f500251a997f7ebb591ba602f373b554582bd15b645c54527aa958e66a3fbf61e0d9e40b6f91ec59f4d5  deviceinfo
+0fa2589c24be704a65380373099e540b61df185f1da77c024b104dc1664e40925200511074d180101b6163a604803baa4a407059dae7cb1c1a700890abbbb939  deviceinfo
 d81350bb2c594d1c922b4eaa5f7ddd94ff5c52d915b6b34e01be2fddc5d624dea77343fab9b168acf889b55daa80a5deace6b81366d579816d5cc73b543a6826  modules-initfs
-7194e5fbae27108f68c9ebccad3081eab66921df28bc98d370e0463d2865a175e47119a3ed4b9fcef461e302cb5ff668f145fdf2fd251c845ae3182d2108cdeb  device-xiaomi-raphael.post-install
-"
+0101125027c146dbcc357cae9c4dfcbc5b8ce91293a0e8289954157f76fb17bc7dde801c393fdbf31cbcf30158f98ed891795baf7ebe1d78034f92dba8bcb946  device-xiaomi-raphael.post-install"

@@ -3,7 +3,7 @@
 pkgname=linux-xiaomi-raphael
 pkgver=6.5.0
 pkgrel=0
-pkgdesc="Xiaomi Redmi K20 Pro kernel fork"
+pkgdesc="Xiaomi Mi 9T Pro / Redmi K20 Pro kernel fork"
 arch="aarch64"
 _carch="arm64"
 _flavor="xiaomi-raphael"

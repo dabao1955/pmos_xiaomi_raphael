@@ -11,7 +11,6 @@
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/slpir.jsn
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/slpius.jsn
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/venus.mbn
-./lib/firmware/qcom/sm8150/Xiaomi/raphael/wlanmdsp.mbn
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/CAMERA_ICP.elf
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/a612_rgmu.bin
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/a630_gmu.bin
@@ -35,9 +34,3 @@
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/ipa_uc.b02
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/ipa_uc.elf
 ./lib/firmware/qcom/sm8150/Xiaomi/raphael/ipa_uc.mdt
-./lib/firmware/qcom/sm8150/Xiaomi/raphael/wigig
-./lib/firmware/qcom/sm8150/Xiaomi/raphael/wigig/wigig.ini
-./lib/firmware/qcom/sm8150/Xiaomi/raphael/wlan
-./lib/firmware/qcom/sm8150/Xiaomi/raphael/wlan/qca_cld
-./lib/firmware/qcom/sm8150/Xiaomi/raphael/wlan/qca_cld/WCNSS_qcom_cfg.ini
-./lib/firmware/qcom/sm8150/Xiaomi/raphael/wlan/qca_cld/wlan_mac.bin
